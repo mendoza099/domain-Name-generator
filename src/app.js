@@ -16,6 +16,11 @@ let noun = ["jogger", "racoon"];
 let domain = [".com", ".es"];
 var anyString = [];
 
+let i = pronoun;
+let k = adj;
+let j = noun;
+let l = domain;
+
 function combinaciones(initial, middle, end, dom) {
   for (i = 0; i < initial.length; i++) {
     var param1 = initial[i];
@@ -35,4 +40,3 @@ function combinaciones(initial, middle, end, dom) {
   }
   return anyString;
 }
-console.log(combinaciones(pronoun, adj, noun, domain));
