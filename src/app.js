@@ -7,36 +7,26 @@ import "./assets/img/4geeks.ico";
 
 window.onload = function() {
   //write your code here
-  console.log("Hello Rigo from the console!");
+  document.querySelector("#generator").innerHTML = combinaciones();
 };
+function combinaciones() {
+  let pronoun = ["the", "our"];
+  let adj = ["great", "big"];
+  let noun = ["jogger", "racoon"];
+  let domain = [".com", ".es"];
 
-let pronoun = ["the", "our"];
-let adj = ["great", "big"];
-let noun = ["jogger", "racoon"];
-let domain = [".com", ".es"];
-var anyString = [];
+  let pronounindx = Math.floor(Math.random() * pronoun.length);
+  let adjindx = Math.floor(Math.random() * adj.length);
+  let nounindx = Math.floor(Math.random() * noun.length);
+  let domainindx = Math.floor(Math.random() * domain.length);
 
-let i = pronoun;
-let k = adj;
-let j = noun;
-let l = domain;
-
-function combinaciones(initial, middle, end, dom) {
-  for (i = 0; i < initial.length; i++) {
-    var param1 = initial[i];
-
-    for (k = 0; k < middle.length; k++) {
-      var param2 = middle[k];
-
-      for (j = 0; j < end.length; j++) {
-        var param3 = end[j];
-
-        for (l = 0; l < domain.length; l++) {
-          var param4 = dom[l];
-          var total = anyString.push(param1 + param2 + param3 + param4);
-        }
-      }
-    }
-  }
-  return anyString;
+  return (
+    pronoun[pronounindx] +
+    "" +
+    adj[adjindx] +
+    "" +
+    noun[nounindx] +
+    "" +
+    domain[domainindx]
+  );
 }
